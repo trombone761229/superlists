@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -74,13 +74,13 @@ WSGI_APPLICATION = 'superlists.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, '../database/db.sqlite3'),
+    }
+}
+"""
 DATABASES={
 	'default':{
 	'ENGINE':'django.db.backends.mysql',
@@ -91,7 +91,7 @@ DATABASES={
 	'PORT':'3306',
 	}
 }
-	
+"""	
 
 
 # Password validation
@@ -131,7 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/Users/WUTAO/python/django/superlists/lists/static',
-]
+STATIC_ROOT=os.path.abspath(os.path.join(BASE_DIR,'../static'))
